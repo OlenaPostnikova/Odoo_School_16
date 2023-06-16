@@ -1,0 +1,28 @@
+{ ‘name’: ‘School_Lesson_6_1’,
+‘version’: ’15.0.0.0.1’,
+‘category’: ‘Extra Tools’,
+‘summary’: “””
+            Odoo School
+ 	 Lesson 6_1: Master and Demo data.
+“””,
+‘license’: ‘OPL-1’,
+‘author’: ‘Garazd Creation’,
+‘website’: ‘https://garazd.biz’,
+‘depends’:
+[‘base’,
+], 
+‘data’: [
+‘security/ir.model.access.csv’,
+‘data/res_parthner_data.xml’,
+‘views/library_book_menus.xml’,
+‘views/library_book_ views.xml’,
+],
+‘demo’: [
+‘data/res_parthner_demo.xml’,
+‘data/res_parthner_bank_demo.xml’,
+],
+‘support’: ‘support@garazd.biz’,
+‘application’: False,
+‘installable’: False,
+‘auto_install’: False,
+}
