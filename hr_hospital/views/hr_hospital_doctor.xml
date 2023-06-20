@@ -8,7 +8,6 @@
             <tree>
                 <field name="active"/>
                 <field name="name"/>
-                <field name="specialization"/>
             </tree>
         </field>
     </record>
@@ -16,6 +15,12 @@
     <record id="hr_hospital_doctor_form" model="ir.ui.view">
         <field name="name">hr_hospital.doctor.form</field>
         <field name="model">hr_hospital.doctor</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="active"/>
+                <field name="name"/>
+            </form>
+        </field>
     </record>
 
 </odoo>

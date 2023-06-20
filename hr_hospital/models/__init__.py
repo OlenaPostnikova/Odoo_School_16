@@ -1,3 +1,4 @@
 # -*- coding: utf-8 -*-
 
-from . import doctors
+from . import doctor
+from . import patient

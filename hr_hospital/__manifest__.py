@@ -11,7 +11,8 @@
         'views/hr_hospital_doctor.xml',
         'views/hr_hospital_patient.xml'
     ],
-    'demo': [
-        'demo/hospital_demo.xml',
-    ]
+    'support': 'support@garazd.biz',
+    'application': False,
+    'installable': True,
+    'auto_install': False,
 }

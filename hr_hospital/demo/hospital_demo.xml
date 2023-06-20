@@ -1,17 +1,3 @@
 <odoo >
-    <data>
 
-          <record id="hr_hospital_doctor_0" model="hr.hospital.doctor">
-              <field name="name">Petrenko Ivan Romanovych</field>
-          </record>
-
-          <record id="hr_hospital_doctor_1" model="hr.hospital.doctor">
-              <field name="name">Rykova Olena Ivanivna</field>
-          </record>
-
-          <record id="hr_hospital_doctor_2" model="hr.hospital.doctor">
-              <field name="name">Dovgodko Ivan Antonovych</field>
-          </record>
-
-    </data>
 </odoo>

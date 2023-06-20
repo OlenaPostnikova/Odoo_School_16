@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <menuitem name="Hospital"
-              id="hr_hospital.menu_root"/>
+              id="hr_hospital.menu_root"
+              web_icon="library,static/description/icon.png"
+              sequence="1"/>
     <menuitem name="Other"
               parent="hr_hospital.menu_root"
               id="hr_hospital.menu_other"/>

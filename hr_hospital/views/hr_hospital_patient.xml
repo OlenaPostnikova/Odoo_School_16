@@ -8,7 +8,6 @@
             <tree>
                 <field name="active"/>
                 <field name="name"/>
-                <field name="specialization"/>
             </tree>
         </field>
     </record>
@@ -16,16 +15,12 @@
     <record id="hr_hospital_patient_form" model="ir.ui.view">
         <field name="name">hr_hospital.patient.form</field>
         <field name="model">hr_hospital.patient</field>
+         <field name="arch" type="xml">
+            <form>
+                <field name="active"/>
+                <field name="name"/>
+            </form>
+        </field>
     </record>
 
-     <record id="hr_hospital_doctor_act_window" model="ir.actions.act_window">
-        <field name="name">Doctors</field>
-        <field name="res_model">hr_hospital.doctor</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-
-    <menuitem name="Doctors"
-              id="hr_hospital.doctor"
-              parent="hr_hospital.menu_root"
-              action="hr_hospital_doctor_act_window"/>
-</odoo>
+  </odoo>
