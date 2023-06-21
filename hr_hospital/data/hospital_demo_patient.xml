@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="hr_hospital_patient1" model="hr_hospital.patient" forcecreate="True">
+        <field name="name">Ivaniv Roman Petrovych</field>
+    </record>
+
+    <record id="hr_hospital_patient2" model="hr_hospital.patient" forcecreate="True">
+        <field name="name">Parhomov Ilya Sergiyovych </field>
+    </record>
+
+    <record id="hr_hospital_patient3" model="hr_hospital.patient" forcecreate="True">
+        <field name="name">Romanenko Tetyana Volodymyrivna </field>
+    </record>
+
+</odoo>

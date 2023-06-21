@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="hr_hospital_disease1" model="hr_hospital.disease" forcecreate="True">
+        <field name="name">Stroke</field>
+    </record>
+
+    <record id="hr_hospital_disease2" model="hr_hospital.disease" forcecreate="True">
+        <field name="name">Allergy</field>
+    </record>
+
+    <record id="hr_hospital_disease3" model="hr_hospital.disease" forcecreate="True">
+        <field name="name">Influenza</field>
+    </record>
+
+</odoo>

@@ -8,4 +8,4 @@ class HrHospitalDoctor(models.Model):
     name = fields.Char(required=True)
     active = fields.Boolean(
         default=True, )
-    specialization = fields.Char(required=True)
+    specialization = fields.Char(required=False)

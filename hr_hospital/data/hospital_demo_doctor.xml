@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="hr_hospital_doctor1" model="hr_hospital.doctor" forcecreate="True">
+        <field name="name">Petrenko Ivan Petrovych</field>
+    </record>
+
+    <record id="hr_hospital_doctor2" model="hr_hospital.doctor" forcecreate="True">
+        <field name="name">Rykova Olena Ivanivna</field>
+    </record>
+
+    <record id="hr_hospital_doctor3" model="hr_hospital.doctor" forcecreate="True">
+        <field name="name">Dovgodko Ivan Antonovych</field>
+    </record>
+
+</odoo>
