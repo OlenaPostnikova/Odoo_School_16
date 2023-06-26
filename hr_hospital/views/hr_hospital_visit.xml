@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+     <record id="hr_hospital_visit_tree" model="ir.ui.view">
+        <field name="name">hr_hospital.visit.tree</field>
+        <field name="model">hr_hospital.visit</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="active"/>
+                <field name="visit_date"/>
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
+                <field name="is_done"/>
+                <field name="state_not_delete" string="Diagnosis exist"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_hospital_visit_form" model="ir.ui.view">
+        <field name="name">hr_hospital.visit.form</field>
+        <field name="model">hr_hospital.visit</field>
+        <field name="arch" type="xml">
+            <form>
+                <group string="Patient, date">
+                    <field name="active"/>
+                    <field name="is_done"/>
+                    <field name="state"/>
+                    <field name="visit_date"/>
+                    <field name="patient_id"/>
+                </group>
+                <group string="Doctor,diagnosis">
+                    <field name="doctor_id"/>
+                    <field name="diagnosis_id"/>
+                </group>
+             </form>
+        </field>
+    </record>
+
+    <record id="hr_hospital_visit_act_window" model="ir.actions.act_window">
+        <field name="name">Appointments</field>
+        <field name="res_model">hr_hospital.visit</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Appointments"
+              id="hr_hospital.visit"
+              parent="hr_hospital.menu_root"
+              action="hr_hospital_visit_act_window"/>
+
+  </odoo>

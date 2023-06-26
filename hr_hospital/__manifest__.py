@@ -1,21 +1,32 @@
 {
     'name': 'Hospital',
     'version': '1.0',
-    'depends': ['base'],
+
     'author': 'Olena',
     'category': 'category',
     'description': """ DB for hospital""",
+
+    'depends': ['base'],
+
     'data': [
         'security/ir.model.access.csv',
         'views/hr_hospital_menus.xml',
         'views/hr_hospital_doctor.xml',
         'views/hr_hospital_patient.xml',
-        'views/hr_hospital_disease.xml'
+        'views/hr_hospital_disease.xml',
+        'views/hr_hospital_specialty.xml',
+        'views/hr_hospital_diagnosis.xml',
+        'views/hr_hospital_visit.xml',
+        'views/hr_hospital_doctor_history.xml',
+        'views/hr_hospital_doctor_schedule.xml',
+        'wizards/new_doctor_wizard_view.xml',
     ],
     'demo': [
         'data/hospital_demo_doctor.xml',
         'data/hospital_demo_patient.xml',
         'data/hospital_demo_disease.xml',
+        'data/hospital_demo_specialty.xml',
+
     ],
     'support': 'support@garazd.biz',
     'application': False,

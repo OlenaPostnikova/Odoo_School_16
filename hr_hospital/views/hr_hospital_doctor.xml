@@ -8,6 +8,8 @@
             <tree>
                 <field name="active"/>
                 <field name="name"/>
+                <field name="specialty_id"/>
+                <field name="is_intern"/>
             </tree>
         </field>
     </record>
@@ -17,11 +19,29 @@
         <field name="model">hr_hospital.doctor</field>
         <field name="arch" type="xml">
             <form>
+                <group string="Full name">
+                    <field name="first_name"/>
+                    <field name="middle_name"/>
+                    <field name="family_name"/>
+                </group>
                 <field name="active"/>
                 <field name="name"/>
+                <group string="Speciality and other details">
+                    <field name="specialty_id"/>
+                    <field name="specialization"/>
+                </group>
+                <group string="Contact details">
+                    <field name="gender"/>
+                    <field name="phone_number"/>
+                    <field name="email"/>
+                </group>
+                <group string="Mentorship">
+                    <field name="is_intern"/>
+                    <field name="mentor_id"/>
+                </group>
             </form>
         </field>
-    </record>
+      </record>
 
     <record id="hr_hospital_doctor_act_window" model="ir.actions.act_window">
         <field name="name">Doctors</field>

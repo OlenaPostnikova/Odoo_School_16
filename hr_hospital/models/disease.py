@@ -7,3 +7,5 @@ class HrHospitalDisease(models.Model):
     name = fields.Char(required=True)
     active = fields.Boolean(
         default=True, )
+# parent
+    disease_group_id = fields.Many2one('hr_hospital.disease_group')

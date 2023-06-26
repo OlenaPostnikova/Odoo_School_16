@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="hr_hospital_disease_group_cold" model="hr_hospital.disease_group" forcecreate="True">
+        <field name="name">Cold</field>
+    </record>
+
+    <record id="hr_hospital_disease_group_cardiovascular" model="hr_hospital.disease_group" forcecreate="True">
+        <field name="name">Cardiovascular</field>
+    </record>
+
+    <record id="hr_hospital_disease_group_allergic" model="hr_hospital.disease_group" forcecreate="True">
+        <field name="name">Allergic</field>
+    </record>
+
+</odoo>

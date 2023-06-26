@@ -2,15 +2,20 @@
 <odoo noupdate="1">
 
     <record id="hr_hospital_patient1" model="hr_hospital.patient" forcecreate="True">
-        <field name="name">Ivaniv Roman Petrovych</field>
+        <field name="first_name">Roman</field>
+        <field name="middle_name">Petrovych</field>
+        <field name="family_name">Ivaniv</field>
     </record>
 
     <record id="hr_hospital_patient2" model="hr_hospital.patient" forcecreate="True">
-        <field name="name">Parhomov Ilya Sergiyovych </field>
+        <field name="first_name">Ilya</field>
+        <field name="middle_name">Sergiyovych </field>
+        <field name="family_name">Parhomov</field>
     </record>
 
     <record id="hr_hospital_patient3" model="hr_hospital.patient" forcecreate="True">
-        <field name="name">Romanenko Tetyana Volodymyrivna </field>
-    </record>
+        <field name="first_name">Tetyana</field>
+        <field name="middle_name">Volodymyrivna </field>
+        <field name="family_name">Romanenko</field>   </record>
 
 </odoo>

@@ -3,14 +3,27 @@
 
     <record id="hr_hospital_disease1" model="hr_hospital.disease" forcecreate="True">
         <field name="name">Stroke</field>
+        <field name="disease_group_id" ref="hr_hospital_disease_group_cardiovascular"/>
     </record>
-
     <record id="hr_hospital_disease2" model="hr_hospital.disease" forcecreate="True">
-        <field name="name">Allergy</field>
+        <field name="name">Heart attack</field>
+        <field name="disease_group_id" ref="hr_hospital_disease_group_cardiovascular"/>
     </record>
-
     <record id="hr_hospital_disease3" model="hr_hospital.disease" forcecreate="True">
+        <field name="name">Allergy</field>
+        <field name="disease_group_id" ref="hr_hospital_disease_group_allergic"/>
+    </record>
+    <record id="hr_hospital_disease4" model="hr_hospital.disease" forcecreate="True">
+        <field name="name">Hay fever</field>
+        <field name="disease_group_id" ref="hr_hospital_disease_group_allergic"/>
+    </record>
+    <record id="hr_hospital_disease5" model="hr_hospital.disease" forcecreate="True">
         <field name="name">Influenza</field>
+        <field name="disease_group_id" ref="hr_hospital_disease_group_cold"/>
+    </record>
+    <record id="hr_hospital_disease6" model="hr_hospital.disease" forcecreate="True">
+        <field name="name">Angina</field>
+        <field name="disease_group_id" ref="hr_hospital_disease_group_cold"/>
     </record>
 
 </odoo>

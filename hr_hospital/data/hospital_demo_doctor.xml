@@ -2,15 +2,21 @@
 <odoo noupdate="1">
 
     <record id="hr_hospital_doctor1" model="hr_hospital.doctor" forcecreate="True">
-        <field name="name">Petrenko Ivan Petrovych</field>
+        <field name="first_name">Ivan</field>
+        <field name="middle_name">Petrovych</field>
+        <field name="family_name">Petrenko</field>
     </record>
 
     <record id="hr_hospital_doctor2" model="hr_hospital.doctor" forcecreate="True">
-        <field name="name">Rykova Olena Ivanivna</field>
+        <field name="first_name">Olena</field>
+        <field name="middle_name">Ivanivna</field>
+        <field name="family_name">Rykova</field>
     </record>
 
     <record id="hr_hospital_doctor3" model="hr_hospital.doctor" forcecreate="True">
-        <field name="name">Dovgodko Ivan Antonovych</field>
+        <field name="first_name">Ivan</field>
+        <field name="middle_name">Antonovych</field>
+        <field name="family_name">Dovgodko</field>
     </record>
 
 </odoo>

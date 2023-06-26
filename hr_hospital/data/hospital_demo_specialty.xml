@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="hr_hospital_specialty_GP" model="hr_hospital.specialty" forcecreate="True">
+        <field name="name">GP</field>
+    </record>
+
+    <record id="hr_hospital_specialty_therapist" model="hr_hospital.specialty" forcecreate="True">
+        <field name="name">Therapist</field>
+    </record>
+
+    <record id="hr_hospital_disease_surgeon" model="hr_hospital.specialty" forcecreate="True">
+        <field name="name">Surgeon</field>
+    </record>
+
+</odoo>

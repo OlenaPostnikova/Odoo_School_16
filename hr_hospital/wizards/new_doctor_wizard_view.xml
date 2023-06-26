@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="new_doctor_wizard_view_form" model="ir.ui.view">
+        <field name="name">new.doctor.wizard.view.form</field>
+        <field name="model">new.doctor.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="doctor_id"/>
+                        <field name="patient_ids"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="Set new doctor"
+                            name="action_set_new_doctor"
+                            type="object"
+                            icon="fa-plus"
+                            class="btn-primary"/>
+                    <button special="cancel" class="oe_link" string="Close"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_open_wizard"
+            model="ir.actions.act_window">
+        <field name="name">New doctor</field>
+        <field name="res_model">new.doctor.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="model_hr_hospital_patient"/>
+        <field name="binding_view_types">list</field>
+        <field name="binding_type">action</field>
+    </record>
+</odoo>
