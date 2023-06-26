@@ -11,4 +11,4 @@ access.hospital.diagnosis,access_hospital_diagnosis,hr_hospital.model_hr_hospita
 access.hospital.visit,access_hospital_visit,hr_hospital.model_hr_hospital_visit,base.group_user,1,1,1,1
 access.hospital.doctor.history,access_hospital_doctor_history,hr_hospital.model_hr_hospital_doctor_history,base.group_user,1,1,1,1
 access.hospital.doctor.schedule,access_hospital_doctor_schedule,hr_hospital.model_hr_hospital_doctor_schedule,base.group_user,1,1,1,1
-access.new.doctor.wizard,access_new_doctor_wizard,model_new_doctor_wizard,base.group_user,1,1,1,1
+access.new.doctor.wizard,access_new_doctor_wizard, model_hr_hospital_new_doctor_wizard,base.group_user,1,1,1,1
