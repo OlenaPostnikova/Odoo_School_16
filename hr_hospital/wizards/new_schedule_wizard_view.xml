@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="new_schedule_form" model="ir.ui.view">
+        <field name="name">new.schedule.form</field>
+        <field name="model">new.schedule.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group string="Doctor, start date, amount of weeks">
+                        <field name="doctor_id"/>
+                        <field name="start_date"/>
+                        <field name="weeks_amount"/>
+                    </group>
+                    <group>
+                        <group string="Even week">
+                            <field name="begin_time_mon_even"/>
+                            <field name="end_time_mon_even"/>
+                            <field name="begin_time_tue_even"/>
+                            <field name="end_time_tue_even"/>
+                        </group>
+                        <group string="Odd week">
+                            <field name="begin_time_mon_odd"/>
+                            <field name="end_time_mon_odd"/>
+                            <field name="begin_time_tue_odd"/>
+                            <field name="end_time_tue_odd"/>
+                        </group>
+                        <field name="schedule_line_ids">
+                            <tree editable="bottom">
+                                <field name="date"/>
+                                <field name="begin_time"/>
+                                <field name="end_time"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="Preview"
+                            name="action_create_lines"
+                            class="btn-primary"
+                            type="object"/>
+                    <button string="New schedule"
+                            name="action_create"
+                            class="btn-primary"
+                            type="object"/>
+                    <button special="cancel" class="oe_link" string="Close"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_open_wizard"
+            model="ir.actions.act_window">
+        <field name="name">Create new schedule</field>
+        <field name="res_model">new.schedule.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="model_hr_hospital_doctor"/>
+        <field name="binding_view_types">form</field>
+        <field name="binding_type">action</field>
+    </record>
+
+</odoo>

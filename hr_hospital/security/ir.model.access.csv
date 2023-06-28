@@ -3,12 +3,14 @@ access.hospital.doctor,access_hospital_doctor,hr_hospital.model_hr_hospital_doct
 access.hospital.patient,access_hospital_patient,hr_hospital.model_hr_hospital_patient,base.group_user,1,1,1,1
 access.hospital.disease,access_hospital_disease,hr_hospital.model_hr_hospital_disease,base.group_user,1,1,1,1
 access.hospital.disease_group,access_hospital_disease_group,hr_hospital.model_hr_hospital_disease_group,base.group_user,1,1,1,1
-access.hospital.person,access_hospital_person,hr_hospital.model_hr_hospital_person,base.group_user,1,1,1,1
-access.hospital.contact_person,access_hospital_contact_person,hr_hospital.model_hr_hospital_contact_person,base.group_user,1,1,1,1
 access.hospital.personaldata,access_hospital_personaldata,hr_hospital.model_hr_hospital_personaldata,base.group_user,1,1,1,1
 access.hospital.specialty,access_hospital_specialty,hr_hospital.model_hr_hospital_specialty,base.group_user,1,1,1,1
 access.hospital.diagnosis,access_hospital_diagnosis,hr_hospital.model_hr_hospital_diagnosis,base.group_user,1,1,1,1
 access.hospital.visit,access_hospital_visit,hr_hospital.model_hr_hospital_visit,base.group_user,1,1,1,1
 access.hospital.doctor.history,access_hospital_doctor_history,hr_hospital.model_hr_hospital_doctor_history,base.group_user,1,1,1,1
 access.hospital.doctor.schedule,access_hospital_doctor_schedule,hr_hospital.model_hr_hospital_doctor_schedule,base.group_user,1,1,1,1
-access.new.doctor.wizard,access_new_doctor_wizard, model_hr_hospital_new_doctor_wizard,base.group_user,1,1,1,1
+access.new.doctor.wizard,access_new_doctor_wizard,model_new_doctor_wizard,base.group_user,1,1,1,1
+access.new.schedule.wizard,access_new_schedule_wizard,model_new_schedule_wizard,base.group_user,1,1,1,1
+access.schedule.line.wizard,access_schedule_line_wizard,model_schedule_line_wizard,base.group_user,1,1,1,1
+
+

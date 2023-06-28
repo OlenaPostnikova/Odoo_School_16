@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-     <record id="hr_hospital_patient_tree" model="ir.ui.view">
+    <record id="hr_hospital_patient_tree" model="ir.ui.view">
         <field name="name">hr_hospital.patient.tree</field>
         <field name="model">hr_hospital.patient</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="active"/>
                 <field name="name"/>
+                <field name="doctor_id"/>
             </tree>
         </field>
     </record>
@@ -15,7 +16,7 @@
     <record id="hr_hospital_patient_form" model="ir.ui.view">
         <field name="name">hr_hospital.patient.form</field>
         <field name="model">hr_hospital.patient</field>
-         <field name="arch" type="xml">
+        <field name="arch" type="xml">
             <form>
                 <group string="Full name">
                     <field name="first_name"/>
@@ -54,4 +55,4 @@
               parent="hr_hospital.menu_root"
               action="hr_hospital_patient_act_window"/>
 
-  </odoo>
+</odoo>

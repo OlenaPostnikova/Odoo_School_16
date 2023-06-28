@@ -1,5 +1,7 @@
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
+from odoo.exceptions import UserError
+
 
 class HrHospitalVisit(models.Model):
     _name = 'hr_hospital.visit'
@@ -21,6 +23,7 @@ class HrHospitalVisit(models.Model):
     recommendation = fields.Text()
     comment = fields.Char()
 
+    # method depends - automatic changing one field with an other
     @api.depends('is_done')
     def _compute_state(self):
         for rec in self:
@@ -28,6 +31,7 @@ class HrHospitalVisit(models.Model):
                 rec.state = 'appointment has been done'
             else:
                 rec.state = 'appointment has not been done'
+
     @api.depends('diagnosis_id')
     def _compute_state_not_delete(self):
         for rec in self:
@@ -36,6 +40,8 @@ class HrHospitalVisit(models.Model):
             else:
                 rec.state_not_delete = False
 
+    # to prohibit changing visit_date
+    # method onchange
     @api.onchange('visit_date')
     def _check_visit_date_(self):
         for rec in self:
@@ -44,24 +50,25 @@ class HrHospitalVisit(models.Model):
             else:
                 rec.state_not_delete = False
 
-    #1.check that doctor don't allowed to have 2 appointments on the same time
+    # 1.check that doctor not allowed to have 2 appointments on the same time
+    # method constrains
     @api.constrains('doctor_id', 'visit_date')
     def check_doctor_time(self):
 
         for rec in self:
             result = self.search([
-                ('doctor_id', '=' , rec.doctor_id.id),
-                ('visit_date', '=',  rec.visit_date),
+                ('doctor_id', '=', rec.doctor_id.id),
+                ('visit_date', '=', rec.visit_date),
                 ('id', '!=', rec.id)
-              ])
+            ])
 
             if result:
-                    raise (
-                        ValidationError(
-                            'Time ' + str(rec.visit_date) + ' for doctor ' + rec.doctor_id.name + 'is already used')
-                    )
+                raise (
+                    ValidationError(
+                        'Time ' + str(rec.visit_date) + ' for doctor ' + rec.doctor_id.name + 'is already used')
+                )
 
-    #2.check that patient don't allowed to have 2 appointments on the same time
+    # 2.check that patient not allowed to have 2 appointments on the same time
     @api.constrains('patient_id', 'visit_date')
     def check_patient_time(self):
         for rec in self:
@@ -76,3 +83,11 @@ class HrHospitalVisit(models.Model):
                     ValidationError(
                         'Time ' + str(rec.visit_date) + ' for patient' + rec.patient_id.name + 'is already used')
                 )
+
+    @api.ondelete(at_uninstall=False)
+    def _unlink_only_if_open(self):
+        for statement in self:
+            if statement.diagnosis_id:
+                raise UserError(
+                    'Not allowed to delete visit '
+                    'You need to clear diagnosis')
