@@ -19,34 +19,62 @@
         <field name="model">hr_hospital.doctor</field>
         <field name="arch" type="xml">
             <form>
-                <group string="Full name">
-                    <field name="first_name"/>
-                    <field name="middle_name"/>
-                    <field name="family_name"/>
-                </group>
-                <field name="active"/>
-                <field name="name"/>
-                <group string="Speciality and other details">
-                    <field name="specialty_id"/>
-                    <field name="specialization"/>
-                </group>
-                <group string="Contact details">
-                    <field name="gender"/>
-                    <field name="phone_number"/>
-                    <field name="email"/>
-                </group>
-                <group string="Mentorship">
-                    <field name="is_intern"/>
-                    <field name="mentor_id"/>
-                </group>
+                <sheet>
+                    <group>
+                        <field name="active"/>
+                        <field name="name"/>
+                        <field name="specialization"/>
+                        <field name="is_intern"/>
+                        <field name="intern_ids" mode="kanban"
+                               attrs="{'invisible': [('is_intern','=',True)]}"/>
+                        <field name="mentor_id"
+                               attrs="{'invisible': [('is_intern','=',False)]}"/>
+                    </group>
+                </sheet>
             </form>
         </field>
-      </record>
+    </record>
+
+    <record id="hr_hospital_doctor_kanban" model="ir.ui.view">
+        <field name="name">hr_hospital.doctor.kanban</field>
+        <field name="model">hr_hospital.doctor</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile" default_group_by="specialization">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div>
+                                <strong>
+                                    <field name="name"/>
+                                </strong>
+                                <div class="text-right">
+                                    <button name="%(hr_hospital.hr_hospital_create_visit_from_doctor_action)d"
+                                            string="Create Visit"
+                                            type="action" class="btn fa fa-edit"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="hr_hospital_doctor_search" model="ir.ui.view">
+        <field name="name">hr_hospital.doctor.search</field>
+        <field name="model">hr_hospital.doctor</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter name="isIntern" string="is intern" domain="[('is_intern','=',True)]"/>
+                <filter name="isMentor" string="is mentor" domain="[('is_intern','=',False)]"/>
+            </search>
+        </field>
+    </record>
 
     <record id="hr_hospital_doctor_act_window" model="ir.actions.act_window">
         <field name="name">Doctors</field>
         <field name="res_model">hr_hospital.doctor</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,kanban,search</field>
     </record>
 
     <menuitem name="Doctors"

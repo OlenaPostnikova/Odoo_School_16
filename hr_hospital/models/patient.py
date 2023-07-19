@@ -25,6 +25,7 @@ class HrHospitalPatient(models.Model):
                                          inverse_name='patient_id')
     visit_ids = fields.One2many(comodel_name='hr_hospital.visit',
                                 inverse_name='patient_id')
+    disease_ids = fields.Many2many(comodel_name='hr_hospital.disease')
 
     @api.depends('birthday')
     def _compute_age(self):

@@ -10,3 +10,5 @@ from . import diagnosis
 from . import visit
 from . import doctor_history
 from . import doctor_schedule
+from . import sample
+from . import sample_type

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_hospital_sample_form" model="ir.ui.view">
+        <field name="name">hr_hospital.sample.form</field>
+        <field name="model">hr_hospital.sample</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="active"/>
+                        <field name="name"/>
+                        <field name="sample_type_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_hospital_sample_tree" model="ir.ui.view">
+        <field name="name">hr_hospital.sample.tree</field>
+        <field name="model">hr_hospital.sample</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_hospital_sample_search" model="ir.ui.view">
+        <field name="name">hr_hospital.sample.search</field>
+        <field name="model">hr_hospital.sample</field>
+        <field name="arch" type="xml">
+            <search>
+                <searchpanel view_types="tree,pivot">
+                    <field name="sample_type_id" hierarchize="1" enable_counters="1"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+
+    <record id="hr_hospital_sample_act_window" model="ir.actions.act_window">
+        <field name="name">Samples</field>
+        <field name="res_model">hr_hospital.sample</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
+
+    <menuitem name="Samples"
+              id="hr_hospital.sample"
+              parent="hr_hospital.menu_root"
+              action="hr_hospital_sample_act_window"/>
+</odoo>

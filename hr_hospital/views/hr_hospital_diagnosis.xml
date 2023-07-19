@@ -40,10 +40,35 @@
         </field>
     </record>
 
+    <record id="hr_hospital_diagnosis_pivot" model="ir.ui.view">
+        <field name="name">hr_hospital.diagnosis.pivot</field>
+        <field name="model">hr_hospital.diagnosis</field>
+        <field name="arch" type="xml">
+            <pivot>
+                <field name="disease_id" type="row"/>
+                <field name="diagnosis_date" interval="year" type="col"/>
+                <field name="diagnosis_date" interval="month" type="col"/>
+                <field name="qty" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="hr_hospital_diagnosis_graph" model="ir.ui.view">
+        <field name="name">hr_hospital.diagnosis.graph</field>
+        <field name="model">hr_hospital.diagnosis</field>
+        <field name="arch" type="xml">
+            <graph type="bar">
+                <field name="diagnosis_date" interval="month"/>
+                <field name="disease_id"/>
+                <field name="qty" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
     <record id="hr_hospital_diagnosis_act_window" model="ir.actions.act_window">
         <field name="name">Diagnosis</field>
         <field name="res_model">hr_hospital.diagnosis</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,pivot,graph</field>
     </record>
 
     <menuitem name="Diagnosis"

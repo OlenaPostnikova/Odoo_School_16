@@ -3,6 +3,8 @@ access.hospital.doctor,access_hospital_doctor,hr_hospital.model_hr_hospital_doct
 access.hospital.patient,access_hospital_patient,hr_hospital.model_hr_hospital_patient,base.group_user,1,1,1,1
 access.hospital.disease,access_hospital_disease,hr_hospital.model_hr_hospital_disease,base.group_user,1,1,1,1
 access.hospital.disease_group,access_hospital_disease_group,hr_hospital.model_hr_hospital_disease_group,base.group_user,1,1,1,1
+access.hospital.sample,access_hospital_sample,hr_hospital.model_hr_hospital_sample,base.group_user,1,1,1,1
+access.hospital.sample_type,access_hospital_sample_type,hr_hospital.model_hr_hospital_sample_type,base.group_user,1,1,1,1
 access.hospital.personaldata,access_hospital_personaldata,hr_hospital.model_hr_hospital_personaldata,base.group_user,1,1,1,1
 access.hospital.specialty,access_hospital_specialty,hr_hospital.model_hr_hospital_specialty,base.group_user,1,1,1,1
 access.hospital.diagnosis,access_hospital_diagnosis,hr_hospital.model_hr_hospital_diagnosis,base.group_user,1,1,1,1

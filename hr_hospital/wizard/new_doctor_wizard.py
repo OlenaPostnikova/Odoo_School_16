@@ -14,19 +14,18 @@ class NewDoctorWizard(models.TransientModel):
     doctor_id = fields.Many2one('hr_hospital.doctor', string='Doctor')
 
     # not used yet (class example)
-    def action_open_wizard(self):
-        return {
-            'name': _('Change current doctor for all patients'),
-            'type': 'ir.action.act_window',
-            'view_mode': 'form',
-            'res_model': 'new.doctor.wizard',
-            'target': 'new',
-            'context': {'default_doctor_id': self.env['hr_hospital.doctor'].browse(self._context.get('active_ids'))},
-        }
+    # def action_open_wizard(self):
+    #     return {
+    #         'name': _('Change current doctor for all patients'),
+    #         'type': 'ir.action.act_window',
+    #         'view_mode': 'form',
+    #         'res_model': 'new.doctor.wizard',
+    #         'target': 'new',
+    #         'context': {'default_doctor_id': self.env['hr_hospital.doctor'].browse(self._context.get('active_ids'))},
+    #     }
 
     # not used yet
 
     def action_set_new_doctor(self):
         for record in self.patient_ids:
-            # print(record.doctor_id)
             record.doctor_id = self.doctor_id

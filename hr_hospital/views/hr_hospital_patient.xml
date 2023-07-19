@@ -18,28 +18,52 @@
         <field name="model">hr_hospital.patient</field>
         <field name="arch" type="xml">
             <form>
-                <group string="Full name">
-                    <field name="first_name"/>
-                    <field name="middle_name"/>
-                    <field name="family_name"/>
-                </group>
-                <field name="active"/>
-                <field name="name"/>
-                <group string="D.O.B.">
-                    <field name="birthday"/>
-                    <field name="age"/>
-                </group>
-                <group string="Passport details">
-                    <field name="passport_id"/>
-                    <field name="passport_date"/>
-                    <field name="passport_authority"/>
-                </group>
-                <group string="Current doctor">
-                    <field name="doctor_id"/>
-                </group>
-                <group string="Emergency contact">
-                    <field name="partner_id"/>
-                </group>
+                <header>
+                    <button name="%(hr_hospital.hr_hospital_create_visit_from_patient_action)d"
+                            string="Create Visit" type="action"
+                            class="oe_stat_button"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="%(hr_hospital.hr_hospital_visit_action)d"
+                                string="Visits" type="action"
+                                class="oe_stat_button" icon="fa-eye"/>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="active"/>
+                            <field name="name"/>
+                            <field name="partner_id"/>
+                            <field name="birthday"/>
+                            <field name="age"/>
+                            <field name="doctor_id"/>
+                        </group>
+                        <group string="Passport details">
+                            <field name="passport_id"/>
+                            <field name="passport_date"/>
+                            <field name="passport_authority"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="History of personal doctor">
+                            <field name="doctor_history_ids">
+                                <tree>
+                                    <field name="date"/>
+                                    <field name="patient_id"/>
+                                    <field name="doctor_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="History of diseases">
+                            <field name="disease_ids">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="disease_group_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
             </form>
         </field>
     </record>

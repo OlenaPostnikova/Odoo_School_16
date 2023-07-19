@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, api
 
 class HrHospitalDiseaseGroup(models.Model):
     _name = 'hr_hospital.disease_group'
@@ -7,3 +7,4 @@ class HrHospitalDiseaseGroup(models.Model):
     name = fields.Char(required=True)
     active = fields.Boolean(
         default=True, )
+

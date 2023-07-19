@@ -7,6 +7,7 @@ class HrHospitalVisit(models.Model):
     _name = 'hr_hospital.visit'
     _description = "Hospital appointment"
 
+    name = fields.Char()
     active = fields.Boolean(
         default=True, )
     is_done = fields.Boolean()

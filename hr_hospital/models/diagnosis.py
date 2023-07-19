@@ -18,6 +18,7 @@ class HrHospitalDiagnosis(models.Model):
                           states={'mentor comment is required': [('required', True)]})
     # mentor comment is required
     state = fields.Char(compute='_compute_state')
+    qty = fields.Integer(default=1, )
 
     @api.depends('doctor_id')
     def _compute_state(self):
