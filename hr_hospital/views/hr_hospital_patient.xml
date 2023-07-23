@@ -9,6 +9,8 @@
                 <field name="active"/>
                 <field name="name"/>
                 <field name="doctor_id"/>
+                <button string="New doctor" name="%(hr_hospital.hr_hospital_open_new_doctor_from_patient_action)d"
+                        type="action"/>
             </tree>
         </field>
     </record>
@@ -40,12 +42,19 @@
                     </div>
                     <group>
                         <group>
-                            <field name="active"/>
-                            <field name="name"/>
-                            <field name="partner_id"/>
-                            <field name="birthday"/>
-                            <field name="age"/>
-                            <field name="doctor_id"/>
+                            <group string="Full name">
+                                <field name="first_name"/>
+                                <field name="middle_name"/>
+                                <field name="family_name"/>
+                                <field name="active"/>
+                                <field name="doctor_id"/>
+                            </group>
+                            <group string="Age,contacts">
+                                <field name="birthday"/>
+                                <field name="age"/>
+                                <field name="name"/>
+                                <field name="partner_id"/>
+                            </group>
                         </group>
                         <group string="Passport details">
                             <field name="passport_id"/>
