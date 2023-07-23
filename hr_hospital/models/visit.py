@@ -5,7 +5,7 @@ from odoo.exceptions import UserError
 
 class HrHospitalVisit(models.Model):
     _name = 'hr_hospital.visit'
-    _description = "Hospital appointment"
+    _description = "Hospital visit"
 
     name = fields.Char()
     active = fields.Boolean(

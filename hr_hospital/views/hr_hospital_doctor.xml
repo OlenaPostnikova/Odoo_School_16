@@ -10,6 +10,7 @@
                 <field name="name"/>
                 <field name="specialty_id"/>
                 <field name="is_intern"/>
+                <field name="mentor_id"/>
             </tree>
         </field>
     </record>
@@ -21,14 +22,23 @@
             <form>
                 <sheet>
                     <group>
-                        <field name="active"/>
-                        <field name="name"/>
-                        <field name="specialization"/>
+                        <group>
+                            <field name="active"/>
+                            <field name="name"/>
+                            <field name="specialty_id"/>
+                        </group>
+                        <group>
+                            <field name="first_name"/>
+                            <field name="middle_name"/>
+                            <field name="family_name"/>
+                        </group>
+                    </group>
+                    <group>
                         <field name="is_intern"/>
-                        <field name="intern_ids" mode="kanban"
-                               attrs="{'invisible': [('is_intern','=',True)]}"/>
                         <field name="mentor_id"
                                attrs="{'invisible': [('is_intern','=',False)]}"/>
+                        <field name="intern_ids" mode="kanban"
+                               attrs="{'invisible': [('is_intern','=',True)]}"/>
                     </group>
                 </sheet>
             </form>
@@ -39,7 +49,7 @@
         <field name="name">hr_hospital.doctor.kanban</field>
         <field name="model">hr_hospital.doctor</field>
         <field name="arch" type="xml">
-            <kanban class="o_kanban_mobile" default_group_by="specialization">
+            <kanban class="o_kanban_mobile" default_group_by="specialty_id" create="false">
                 <templates>
                     <t t-name="kanban-box">
                         <div class="oe_kanban_global_click">
@@ -49,7 +59,7 @@
                                 </strong>
                                 <div class="text-right">
                                     <button name="%(hr_hospital.hr_hospital_create_visit_from_doctor_action)d"
-                                            string="Create Visit"
+                                            string="New appointment"
                                             type="action" class="btn fa fa-edit"/>
                                 </div>
                             </div>

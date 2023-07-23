@@ -9,3 +9,4 @@ class HrHospitalSample(models.Model):
     active = fields.Boolean(
         default=True, )
     sample_type_id = fields.Many2one('hr_hospital.sample.type')
+    patient_id = fields.Many2one('hr_hospital.patient', string='Patient')

@@ -25,9 +25,18 @@
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
-                        <button name="%(hr_hospital.hr_hospital_visit_action)d"
-                                string="Visits" type="action"
-                                class="oe_stat_button" icon="fa-eye"/>
+                        <button type="action" name="%(hr_hospital.hr_hospital_visit_action)d"
+                                class="oe_stat_button" icon="fa-eye">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_text">Appointments</span>
+                            </div>
+                        </button>
+                        <button type="action" name="%(hr_hospital.hr_hospital_sample_action)d"
+                                class="oe_stat_button" icon="fa-edit">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_text">Samples</span>
+                            </div>
+                        </button>
                     </div>
                     <group>
                         <group>

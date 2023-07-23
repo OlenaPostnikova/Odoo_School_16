@@ -10,6 +10,7 @@
                         <field name="active"/>
                         <field name="name"/>
                         <field name="sample_type_id"/>
+                        <field name="patient_id"/>
                     </group>
                 </sheet>
             </form>
@@ -22,6 +23,8 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
+                <field name="sample_type_id"/>
+                <field name="patient_id"/>
             </tree>
         </field>
     </record>
@@ -36,6 +39,14 @@
                 </searchpanel>
             </search>
         </field>
+    </record>
+
+    <record id="hr_hospital_sample_action" model="ir.actions.act_window">
+        <field name="name">Hospital sample</field>
+        <field name="res_model">hr_hospital.sample</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('patient_id','=', active_id)]</field>
     </record>
 
     <record id="hr_hospital_sample_act_window" model="ir.actions.act_window">
