@@ -6,8 +6,8 @@
     'category': 'category',
     'description': """ DB for hospital""",
 
-    'depends': ['base'],
-
+    'depends': ['base','web' ],
+    'qweb': [],
     'data': [
         'security/ir.model.access.csv',
         'views/hr_hospital_menus.xml',
@@ -23,6 +23,8 @@
         'views/hr_hospital_sample_type.xml',
         'wizard/new_doctor_wizard_view.xml',
         'wizard/new_schedule_wizard_view.xml',
+        'reports/hr_hospital_doctor_report.xml',
+        'reports/hr_hospital_doctor_reports_templates.xml',
     ],
     'demo': [
         'data/hospital_demo_doctor.xml',

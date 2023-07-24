@@ -13,7 +13,7 @@ class HrHospitalDoctor(models.Model):
 #   speciality
     specialty_id = fields.Many2one(comodel_name='hr_hospital.specialty', string='Specialty')
 #   text comment
-    specialization = fields.Char(required=False)
+    specialization = fields.Char(required=False, string='Specialty details')
 
 #intern & mentor
     is_intern = fields.Boolean('is intern')
@@ -27,3 +27,5 @@ class HrHospitalDoctor(models.Model):
     #for wizard new doctor
     patient_ids = fields.One2many(comodel_name='hr_hospital.patient',
                               inverse_name='doctor_id')
+#for report
+    activity_doctor_history = fields.Text()

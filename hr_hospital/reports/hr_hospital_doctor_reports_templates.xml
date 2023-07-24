@@ -1,0 +1,115 @@
+<odoo>
+
+    <template id="logo_template">
+        <div style="text-align:right;">
+            <div class="col-6">
+                <img t-att-src="image_data_uri(user.company_id.logo)"
+                     alt="Logo"/>
+            </div>
+            <div style="font-size:14px">
+                <span t-esc="user.company_id.city"/>,
+                <span t-esc="user.company_id.street"/>
+                <br/>
+                <span t-esc="user.company_id.phone"/>
+                <br/>
+                <span t-esc="user.company_id.email"/>
+                <br/>
+            </div>
+        </div>
+    </template>
+
+    <template id="doctor_info">
+        <div style="text-align:right;">
+            <strong>
+                <span t-esc="doc.name"/>
+                <br/>
+                <span t-esc="doc.specialty_id.name"/>
+                <br/>
+                <span t-esc="doc.specialization"/>
+            </strong>
+        </div>
+        <br/>
+        <div style="text-align: center;">
+            <strong>
+                Activity history
+            </strong>
+        </div>
+        <br/>
+        <div t-field="doc.activity_doctor_history"/>
+    </template>
+
+    <template id="patients">
+        <div>
+            <div style="text-align: center;">
+                <strong>
+                    Patients
+                </strong>
+            </div>
+            <br/>
+            <table class="table-bordered"
+                   style="border: 1px solid black;"
+                   width="100%">
+                <tr>
+                    <th style="border: 1px solid black;">
+                        <t>Patient name</t>
+                    </th>
+                    <th style="border: 1px solid black;">
+                        <t>Date of Birth</t>
+                    </th>
+                    <th style="border: 1px solid black;">
+                        <t>Phone</t>
+                    </th>
+                </tr>
+                <t t-foreach="doc.patient_ids"
+                   t-as="patient">
+                    <t t-if="patient.grade_of_sick == '1'">
+                        <t t-set="back_color" t-value="'background-color:green'"/>
+                    </t>
+                    <t t-elif="patient.grade_of_sick == '2'">
+                        <t t-set="back_color" t-value="'background-color:yellow'"/>
+                    </t>
+                    <t t-elif="patient.grade_of_sick == '3'">
+                        <t t-set="back_color" t-value="'background-color:red'"/>
+                    </t>
+                    <tr style="border: 1px solid black;" t-attf-style="{{back_color}}">
+                        <th style="border: 1px solid black;">
+                            <div t-field="patient.name"/>
+                        </th>
+                        <th style="border: 1px solid black;">
+                            <div t-field="patient.birthday"/>
+                        </th>
+                        <th style="border: 1px solid black;">
+                            <div t-field="patient.phone_number"/>
+                        </th>
+                    </tr>
+                </t>
+            </table>
+        </div>
+    </template>
+
+    <template id="print_date_time">
+        <div style="text-align:right;">
+            <span t-esc="user.company_id.city"/>
+            <br/>
+            <div name="datetime">
+                <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/>
+            </div>
+        </div>
+    </template>
+
+    <template id="report_doctor">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="hr_hospital.logo_template"/>
+                <br/>
+                <t t-call="hr_hospital.doctor_info"/>
+                <br/>
+                <t t-call="hr_hospital.patients"/>
+                <br/>
+                <t t-call="hr_hospital.print_date_time"/>
+            </t>
+        </t>
+    </template>
+
+</odoo>
+

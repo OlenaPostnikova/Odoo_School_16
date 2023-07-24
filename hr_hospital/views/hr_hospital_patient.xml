@@ -22,7 +22,7 @@
             <form>
                 <header>
                     <button name="%(hr_hospital.hr_hospital_create_visit_from_patient_action)d"
-                            string="Create Visit" type="action"
+                            string="New appointment" type="action"
                             class="oe_stat_button"/>
                 </header>
                 <sheet>
@@ -46,12 +46,16 @@
                                 <field name="first_name"/>
                                 <field name="middle_name"/>
                                 <field name="family_name"/>
-                                <field name="active"/>
+                                <field name="gender"/>
                                 <field name="doctor_id"/>
+                                <field name="grade_of_sick"/>
+                                <field name="active"/>
                             </group>
                             <group string="Age,contacts">
                                 <field name="birthday"/>
                                 <field name="age"/>
+                                <field name="phone_number"/>
+                                <field name="email"/>
                                 <field name="name"/>
                                 <field name="partner_id"/>
                             </group>

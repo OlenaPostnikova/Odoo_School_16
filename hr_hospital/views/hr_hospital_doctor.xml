@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-     <record id="hr_hospital_doctor_tree" model="ir.ui.view">
+    <record id="hr_hospital_doctor_tree" model="ir.ui.view">
         <field name="name">hr_hospital.doctor.tree</field>
         <field name="model">hr_hospital.doctor</field>
         <field name="arch" type="xml">
@@ -26,11 +26,17 @@
                             <field name="active"/>
                             <field name="name"/>
                             <field name="specialty_id"/>
+                            <field name="specialization"/>
                         </group>
                         <group>
-                            <field name="first_name"/>
-                            <field name="middle_name"/>
-                            <field name="family_name"/>
+                            <group>
+                                <field name="activity_doctor_history"/>
+                            </group>
+                            <group>
+                                <field name="first_name"/>
+                                <field name="middle_name"/>
+                                <field name="family_name"/>
+                            </group>
                         </group>
                     </group>
                     <group>
@@ -92,4 +98,4 @@
               parent="hr_hospital.menu_root"
               action="hr_hospital_doctor_act_window"/>
 
-  </odoo>
+</odoo>
