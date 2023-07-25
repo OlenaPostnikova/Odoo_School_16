@@ -27,3 +27,10 @@ class HrHospitalDiagnosis(models.Model):
                 rec.state = 'mentor comment is required'
             else:
                 rec.state = 'mentor comment is not required'
+
+    def get_diagnosis_(self, patient_id, doctor_id, disease_id):
+        for rec in self:
+            for rec_patients in self.patient_id:
+                if rec.doctor_id == doctor_id and rec.disease_id == disease_id:
+                    return self.visit_ids.visit_date
+            return ''

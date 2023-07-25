@@ -74,3 +74,26 @@ class HrHospitalPatient(models.Model):
 
         #attention: as method write was redefined we need to finish writing manually (1C => return status = 0 )
         res = super(HrHospitalPatient, self).write(vals)
+
+    #find visit with diagnosis of this disease
+    def get_diagnosis_date(self, disease_id):
+        self.ensure_one()
+        for rec_visit in self.visit_ids:
+            print(rec_visit.visit_date);
+            for rec_diagnosis in rec_visit.diagnosis_id:
+                print(rec_diagnosis.disease_id.name);
+                if rec_diagnosis.disease_id == disease_id:
+                    return 1
+ #                   return f'{self.visit_ids.visit_date} {self.visit_ids.doctor_id}'
+        return ''
+
+    #find visit with diagnosis of this disease
+    def get_last_doctor_visit_date(self, doctor_id):
+        self.ensure_one()
+        for rec_visit in self.visit_ids:
+            if rec_visit == doctor_id:
+                return self.visit_ids.visit_date
+        return ''
+
+
+#        return f'{self.first_name} {self.family_name}'
