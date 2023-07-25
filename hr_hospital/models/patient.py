@@ -83,8 +83,7 @@ class HrHospitalPatient(models.Model):
             for rec_diagnosis in rec_visit.diagnosis_id:
                 print(rec_diagnosis.disease_id.name);
                 if rec_diagnosis.disease_id == disease_id:
-                    return 1
- #                   return f'{self.visit_ids.visit_date} {self.visit_ids.doctor_id}'
+                    return f'{rec_visit.visit_date} {rec_diagnosis.doctor_id.name}'
         return ''
 
     #find visit with diagnosis of this disease
