@@ -108,11 +108,11 @@
                                     </div>
                                 </div>
 
-                                <div class="text-right">
-                                    <button name="%(hr_hospital.hr_hospital_create_visit_from_doctor_action)d"
-                                            string="New appointment"
-                                            type="action" class="btn fa fa-edit"/>
-                                </div>
+<!--                                <div class="text-right">-->
+<!--                                    <button name="%(hr_hospital.hr_hospital_create_visit_from_doctor_action)d"-->
+<!--                                            string="New appointment"-->
+<!--                                            type="action" class="btn fa fa-edit"/>-->
+<!--                                </div>-->
                                 <br/>
                             </div>
                         </div>
