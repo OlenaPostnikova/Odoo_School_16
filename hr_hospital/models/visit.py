@@ -24,7 +24,7 @@ class HrHospitalVisit(models.Model):
     recommendation = fields.Text()
     comment = fields.Char()
 
-    # method depends - automatic changing one field with an other
+    # method depends - automatic changing one field with another
     @api.depends('is_done')
     def _compute_state(self):
         for rec in self:
