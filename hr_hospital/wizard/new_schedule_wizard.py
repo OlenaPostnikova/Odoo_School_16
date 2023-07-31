@@ -1,7 +1,8 @@
 from odoo import models, fields
 from datetime import timedelta
 
-
+#заполняем часы приема у доктора по четным и нечетным неделям
+#переписать на Integer вместо времени
 class ScheduleLineWizard(models.TransientModel):
     _name = 'schedule.line.wizard'
     _description = 'New schedule lines even & odd'
