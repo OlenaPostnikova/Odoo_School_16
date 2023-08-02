@@ -1,1 +1,0 @@
-from . import new_timetable_wizard
