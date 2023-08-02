@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="auto_service_visit_1" model="auto_service.visit" forcecreate="True">
+        <field name="name">1</field>
+        <field name="visit_date" eval="datetime.now()"/>
+        <field name="start_time" eval="datetime.now() - timedelta(hours=1,minutes=30)"/>
+        <field name="vehicle_id" ref="auto_service_vehicle_volvo"/>
+        <field name="customer_id" ref="res_partner_auto_service_1"/>
+        <field name="mechanic_id" ref="auto_service_mechanic_1"/>
+        <field name="job_id" ref="auto_service_job_headlight"/>
+        <field name="equipment_id" ref="auto_service_equipment_1"/>
+        <field name="duration">2</field>
+        <field name="price">45.00</field>
+        <field name="car_mileage">45000</field>
+    </record>
+    <record id="auto_service_visit_2" model="auto_service.visit" forcecreate="True">
+        <field name="name">2</field>
+        <field name="visit_date" eval="datetime.now()"/>
+        <field name="start_time" eval="datetime.now() - timedelta(hours=1,minutes=5)"/>
+        <field name="vehicle_id" ref="auto_service_vehicle_volvo"/>
+        <field name="customer_id" ref="res_partner_auto_service_1"/>
+        <field name="mechanic_id" ref="auto_service_mechanic_1"/>
+        <field name="job_id" ref="auto_service_job_wheel_alignment"/>
+        <field name="equipment_id" ref="auto_service_equipment_3"/>
+        <field name="duration">2</field>
+        <field name="price">39.00</field>
+        <field name="car_mileage">45000</field>
+    </record>
+    <record id="auto_service_visit_3" model="auto_service.visit" forcecreate="True">
+        <field name="name">3</field>
+        <field name="visit_date" eval="datetime.now() - timedelta(hours=24)"/>
+        <field name="start_time" eval="datetime.now() - timedelta(hours=24,minutes=30)"/>
+        <field name="vehicle_id" ref="auto_service_vehicle_mercedes"/>
+        <field name="customer_id" ref="res_partner_auto_service_2"/>
+        <field name="mechanic_id" ref="auto_service_mechanic_1"/>
+        <field name="job_id" ref="auto_service_job_brake_fluid"/>
+        <field name="equipment_id" ref="auto_service_equipment_1"/>
+        <field name="duration">2</field>
+        <field name="price">49.00</field>
+        <field name="car_mileage">90000</field>
+    </record>
+      <record id="auto_service_visit_4" model="auto_service.visit" forcecreate="True">
+        <field name="name">4</field>
+        <field name="visit_date" eval="datetime.now()"/>
+        <field name="start_time" eval="datetime.now() - timedelta(hours=1,minutes=5)"/>
+        <field name="vehicle_id" ref="auto_service_vehicle_volvo"/>
+        <field name="customer_id" ref="res_partner_auto_service_1"/>
+        <field name="mechanic_id" ref="auto_service_mechanic_1"/>
+        <field name="job_id" ref="auto_service_job_wheel_alignment"/>
+        <field name="equipment_id" ref="auto_service_equipment_3"/>
+        <field name="duration">2</field>
+        <field name="price">39.00</field>
+        <field name="car_mileage">45000</field>
+    </record>
+      <record id="auto_service_visit_5" model="auto_service.visit" forcecreate="True">
+        <field name="name">5</field>
+        <field name="visit_date" eval="datetime.now()"/>
+        <field name="start_time" eval="datetime.now() - timedelta(hours=1,minutes=5)"/>
+        <field name="vehicle_id" ref="auto_service_vehicle_volvo"/>
+        <field name="customer_id" ref="res_partner_auto_service_1"/>
+        <field name="mechanic_id" ref="auto_service_mechanic_1"/>
+        <field name="job_id" ref="auto_service_job_wheel_alignment"/>
+        <field name="equipment_id" ref="auto_service_equipment_3"/>
+        <field name="duration">2</field>
+        <field name="price">39.00</field>
+        <field name="car_mileage">45000</field>
+    </record>
+     <record id="auto_service_visit_6" model="auto_service.visit" forcecreate="True">
+        <field name="name">6</field>
+        <field name="visit_date" eval="datetime.now()"/>
+        <field name="start_time" eval="datetime.now() - timedelta(hours=1,minutes=5)"/>
+        <field name="vehicle_id" ref="auto_service_vehicle_ford"/>
+        <field name="customer_id" ref="res_partner_auto_service_3"/>
+        <field name="mechanic_id" ref="auto_service_mechanic_4"/>
+        <field name="job_id" ref="auto_service_job_general_repair"/>
+        <field name="equipment_id" ref="auto_service_equipment_2"/>
+        <field name="duration">15</field>
+        <field name="price">389.50</field>
+        <field name="car_mileage">45000</field>
+    </record>
+</odoo>
+
+
